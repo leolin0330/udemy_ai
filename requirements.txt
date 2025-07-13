@@ -66,11 +66,11 @@ jupyter_server_terminals==0.5.3
 jupyterlab==4.4.4
 jupyterlab_pygments==0.3.0
 jupyterlab_server==2.27.3
-langchain==0.1.9
-langchain-community==0.0.24
-langchain-core==0.1.26
-langchain-openai==0.0.7
-langchain-text-splitters==0.3.8
+langchain==0.1.14
+langchain-community==0.0.40
+langchain-core==0.3.70
+langchain-openai==0.0.16
+langchain-text-splitters==0.0.1
 langsmith==0.1.6
 lxml==4.9.3
 markdown-it-py==3.0.0
