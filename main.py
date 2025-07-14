@@ -1,7 +1,34 @@
 import streamlit as st
 from utils import generate_script
 
+if "font_size" not in st.session_state:
+    st.session_state.font_size = "中"
+
+font_size_map = {
+    "小": "12px",
+    "中": "16px",
+    "大": "25px"
+}
+
+font_size = st.selectbox(
+    "選擇字體大小",
+    ["小", "中", "大"],
+    index=["小", "中", "大"].index(st.session_state.font_size),
+    key="font_size"
+)
+
+css = f"""
+<style>
+    h1, h2, h3, h4, h5, h6, p, span, div, label {{
+        font-size: {font_size_map[st.session_state.font_size]} !important;
+    }}
+</style>
+"""
+
+st.markdown(css, unsafe_allow_html=True)
+
 st.title("🎬 視頻腳本生成器")
+
 
 with st.sidebar:
     openai_api_key = st.text_input("請輸入OpenAI API密鑰：", type="password")
